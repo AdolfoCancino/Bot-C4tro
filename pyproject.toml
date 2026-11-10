@@ -1,0 +1,26 @@
+[project]
+name = "bot-estadistico"
+version = "0.1.0"
+description = "Bot modular de Discord para seguir las metas de un servidor."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiosqlite>=0.21,<1",
+    "discord.py>=2.5,<3",
+    "python-dotenv>=1.1,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "ruff>=0.12,<1"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
